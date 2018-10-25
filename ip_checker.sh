@@ -30,7 +30,7 @@ for i in `echo $2 | sed 's/,/ /g'`
     for j in $(seq $3 $4 )
       do
         ip=$1.$i.$j
-        ping -c1 172.30.$i.$j > /dev/null
+        ping -c1 $1.$i.$j > /dev/null
         if [ $? -ne 0 ]
         then
           valid_ip+=($ip)
